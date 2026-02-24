@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "properties": {
+      "cck2_equivalent": {
+        "type": "array",
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": { "type": "string", "minLength": 1 }
+      },
+      "preferences_affected": {
+        "type": "array",
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": { "type": "string", "minLength": 1 }
+      },
+      "compatibility": {
+        "type": "object",
+        "minProperties": 1,
+        "additionalProperties": false,
+        "properties": {
+          "firefox": { "$ref": "#/$defs/compatEntry" },
+          "firefox_esr": { "$ref": "#/$defs/compatEntry" }
+        }
+      }
+    },
+    "required": ["compatibility"],
+    "additionalProperties": false
+  },
+  "$defs": {
+    "version": {
+      "type": "string",
+      "pattern": "^([1-9]\\d*)(\\.(0|[1-9]\\d*)){0,2}$"
+    },
+    "compatEntry": {
+      "type": "object",
+      "properties": {
+        "version_added": { "$ref": "#/$defs/version" },
+        "version_removed": { "$ref": "#/$defs/version" },
+        "notes": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      },
+      "required": ["version_added"],
+      "additionalProperties": false
+    }
+  }
+}

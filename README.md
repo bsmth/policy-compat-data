@@ -1,3 +1,9 @@
-# My template
+# Policy compat data
 
-Basic GitHub template for common project configs.
+Example compat data for policies.
+
+## Testing
+
+```bash
+npm i && npm test
+```

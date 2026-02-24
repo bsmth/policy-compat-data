@@ -7,7 +7,9 @@ bsmthde
 DALL
 dalle
 disqus
+echconfig
 favourites
+fxaccounts
 GIPHY
 Giscus
 JSONLD
@@ -18,12 +20,15 @@ MVVM
 necolas
 nocookie
 ORGJSONLD
+pbmode
 Pokedex
 prismjs
 signin
+Signons
 tada
 Topre
 unbricked
 Vectornator
 visi
 Vymazal
+xpinstall
